@@ -1,4 +1,21 @@
 import { notFound } from "next/navigation";
+interface Params {
+  id: string;
+}
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
+  const { id } = await params;
+
+  const res = await fetch(`http://localhost:4000/tickets/${id}`);
+  const ticket = await res.json();
+
+  return {
+    title: `Dojo Helpdesk | ${ticket.title}`,
+  };
+}
 
 async function getTicket(id: string) {
   const res = await fetch(`http://localhost:4000/tickets/${id}`, {
@@ -11,9 +28,7 @@ async function getTicket(id: string) {
   }
   return res.json();
 }
-interface Params {
-  id: string;
-}
+
 export default async function TicketDetails({
   params,
 }: {
