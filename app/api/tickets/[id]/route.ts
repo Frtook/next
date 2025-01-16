@@ -3,10 +3,7 @@ import { NextResponse } from "next/server";
 interface Params {
   id: string;
 }
-export async function GET(
-  _: undefined,
-  { params }: { params: Promise<Params> }
-) {
+export async function GET(_: Request, { params }: { params: Promise<Params> }) {
   const { id } = await params;
   const res = await fetch("http://localhost:4000/tickets/" + id);
   if (!res.ok) {
