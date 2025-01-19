@@ -1,13 +1,15 @@
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import Link from "next/link";
-
+import { cookies } from "next/headers";
 async function getTickets() {
-  const res = await fetch("http://localhost:4000/tickets", {
-    next: {
-      revalidate: 0,
-    },
-  });
+  const superbase = createServerComponentClient({ cookies });
 
-  return res.json();
+  const { data, error } = await superbase.from("Tickets").select();
+  if (error) {
+    console.log(error.message);
+  }
+
+  return data || [];
 }
 interface Ticket {
   id: string;
