@@ -3,12 +3,7 @@ import SubmitButton from "@/components/SubmitButton";
 
 export default function CreateForm() {
   return (
-    <form
-      action={addTiket}
-      method="POST"
-      encType="multipart/form-data"
-      className="w-1/2"
-    >
+    <form action={addTiket} className="w-1/2">
       <label>
         <span>Title:</span>
         <input required type="text" name="title" />

@@ -12,8 +12,8 @@ export default async function AuthLayout({
   if (data.session) redirect("/");
   return (
     <>
-      <nav>
-        <h1>Dojo Helpdesk</h1>
+      <nav className="flex p-4 ">
+        <h1 className="mr-auto md:mr-0">Dojo Helpdesk</h1>
         <Link href="/signup">Sign up</Link>
         <Link href="/login">Login</Link>
       </nav>

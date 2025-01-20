@@ -5,14 +5,14 @@
 /* base styles */
 body {
   background: #ebf0fa;
-  @apply text-gray-500 m-8;
+  @apply text-gray-500 md:m-8;
 }
 h1,
 h2 {
   @apply font-bold text-primary text-lg;
 }
 main {
-  @apply max-w-5xl my-12 mx-auto px-8;
+  @apply w-full md:max-w-5xl my-12 mx-auto px-8;
 }
 main > h2 {
   @apply mb-4 pb-2 text-base;

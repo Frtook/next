@@ -6,7 +6,7 @@ import LogoutButton from "./LogoutButton";
 
 export default function Navbar({ user }: { user: User | undefined }) {
   return (
-    <nav>
+    <nav className="flex flex-col md:flex-row">
       <Link href="/">
         <Image
           src={Logo}
@@ -18,7 +18,7 @@ export default function Navbar({ user }: { user: User | undefined }) {
       </Link>
       <h1>Dojo Helpdesk</h1>
       <Link href="/">Dashboard</Link>
-      <Link href="/tickets" className="mr-auto">
+      <Link href="/tickets" className="md:mr-auto">
         Tickets
       </Link>
       <LogoutButton />
