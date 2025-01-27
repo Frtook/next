@@ -2,7 +2,7 @@
 
 import { useTransition } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
-import { deleteTiket } from "../actions";
+import { deleteArticle } from "../actions";
 
 export default function DeleteButton({ id }: { id: string }) {
   const [isPandding, startTranstioin] = useTransition();
@@ -11,7 +11,7 @@ export default function DeleteButton({ id }: { id: string }) {
     <button
       className="btn-primary"
       disabled={isPandding}
-      onClick={() => startTranstioin(() => deleteTiket(id))}
+      onClick={() => startTranstioin(() => deleteArticle(id))}
     >
       {isPandding && (
         <>

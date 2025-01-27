@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
 
   // insert the data
   const { data, error } = await supabase
-    .from("Tickets")
+    .from("articles")
     .insert({
       ...ticket,
       user_email: session?.user.email,
