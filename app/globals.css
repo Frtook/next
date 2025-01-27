@@ -103,7 +103,7 @@ form button {
     overflow-hidden;
 }
 .card h3 {
-  @apply font-bold text-text text-sm 
+  @apply font-bold text-accent text-sm 
     mb-0;
 }
 .card p {

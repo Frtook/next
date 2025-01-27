@@ -42,7 +42,7 @@ export default async function TicketDetails({
         <p>{article.body}</p>
 
         <LikeButton
-          isLikes={article.user_likes.includes(email) ? true : false}
+          isLikes={article.user_likes?.includes(email) ? true : false}
           likes={article.like}
           id={article.id}
         />
