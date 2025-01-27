@@ -8,5 +8,5 @@ export async function GET(req: NextRequest) {
     const supbase = createRouteHandlerClient({ cookies });
     await supbase.auth.exchangeCodeForSession(code);
   }
-  return NextResponse.redirect("https://nextjs-blogs-tan.vercel.app/");
+  return NextResponse.redirect(url.origin);
 }
